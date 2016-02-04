@@ -71,6 +71,6 @@ flash_lonum( unsigned int num )
 void
 blink_led(unsigned int color)
 {
-	flash_led( 1, color, 4 );
+	flash_led( 1, color, 1 );
 	return;
 }

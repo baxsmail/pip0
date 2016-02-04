@@ -6,21 +6,28 @@
 
 
 
-unsigned int
-gettime( )
+unsigned int gettime( )
 {
-	// your code goes here
+    unsigned int lo = GET32( LS );
+    unsigned int hi = GET32( MS );
+    unsigned int re = ( lo>>16 ) | ( hi<<16 );
+    return re;
 }
 
-unsigned int
-timediff( unsigned int now, unsigned int then )
+unsigned int timediff( unsigned int now, unsigned int then )
 {
-	// your code goes here
+    return ( now - then );
 }
 
-void
-wait( unsigned int time )
+void wait( unsigned int time )
 {
-	// your code goes here
+    PUT32(PRESCALE,0x80000000);
+    unsigned int then = gettime();
+    unsigned int now;
+    do
+    {
+        now = gettime();
+    }while( now - then < time );
+    //}while( timediff( now, then ) < time );
 }
 

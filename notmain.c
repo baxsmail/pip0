@@ -11,9 +11,9 @@ notmain()
 {
 	unsigned int now, then, delta;
 	while (1) {
+		blink_led( GRN );
 		wait( ONE_SECOND );
 		then = gettime();
-		blink_led( GRN );
 		now = gettime();
 		delta = timediff( now, then );
 	}

@@ -4,7 +4,10 @@
 // information regarding the time library
 //
 
-#define	ONE_SECOND	0xdeadbeef		// you define this however you want/need
+#define LS 0x4000001c
+#define MS 0x40000020
+#define PRESCALE 0x40000008
+#define	ONE_SECOND	1500		// you define this however you want/need
 
 
 extern unsigned int gettime( void );
