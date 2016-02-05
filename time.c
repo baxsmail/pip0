@@ -27,7 +27,7 @@ void wait( unsigned int time )
     do
     {
         now = gettime();
-    }while( now - then < time );
+    }while( timediff( now , then ) < time );
     //}while( timediff( now, then ) < time );
 }
 
