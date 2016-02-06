@@ -7,7 +7,7 @@
 #define LS 0x4000001c
 #define MS 0x40000020
 #define PRESCALE 0x40000008
-#define	ONE_SECOND	1500		// you define this however you want/need
+#define	ONE_SECOND	500		// you define this however you want/need
 
 
 extern unsigned int gettime( void );
